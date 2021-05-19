@@ -1,7 +1,9 @@
+/* dropdown menu function */
 function dropdown() {
     document.getElementById("drop-content").classList.toggle("show-dropdown");
 }
 
+/* event for click outside of dropdown icon */
 window.onclick = function(event) {
     if (!event.target.matches('.dropdown-icon')) {
       let dropdowns = document.getElementById("drop-content");

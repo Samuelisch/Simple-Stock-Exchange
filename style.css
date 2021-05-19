@@ -31,11 +31,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    width: 30%;
 }
 
 .infobar p {
-    margin: 0 10%;
+    margin: 0;
+    flex: 2;
 }
 
 .dropdown-btn {
@@ -43,6 +44,7 @@ h1 {
     background-color: inherit;
     border: none;
     width: 50px;
+    flex: 1;
 }
 
 .drop-content {
@@ -51,7 +53,7 @@ h1 {
     float: right;
     right: 0; /* prevents overflow of content */
     min-width: 100px;
-    z-index: 10;
+    z-index: 5;
     border-bottom-left-radius: 10px;
 }
 
@@ -63,7 +65,7 @@ h1 {
 }
 
 .drop-content a:hover {
-    background-color: rgb(2, 8, 22);
+    color: rgb(2, 8, 22);
 }
 
 .drop-content a:active {
