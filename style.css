@@ -8,7 +8,7 @@ html {
 
 body {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 h1 {
@@ -27,27 +27,15 @@ h1 {
     background-color: darkcyan;
 }
 
-.infobar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 30%;
-}
-
-.infobar p {
-    margin: 0;
-    flex: 2;
-}
-
 .dropdown-btn {
     position: relative;
     background-color: inherit;
     border: none;
     width: 50px;
-    flex: 1;
 }
 
 .drop-content {
+    position: absolute;
     display: none;
     background-color: darkcyan;
     float: right;
@@ -73,5 +61,44 @@ h1 {
 }
 
 .show-dropdown{
-    display: inline-block;
+    display: block;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+    padding: 0 1rem .5rem;
+    background-color: darkcyan;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.balance {
+    margin: 0;
+    align-self: flex-start;
+}
+
+/* Balance wheel */
+.balance-wheel {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 25px solid rgb(156, 155, 155);
+}
+
+/* deposit and withdraw buttons */
+.acc-button {
+    margin: 0 1rem;
+    background-color: rgb(2, 8, 22);
+    border: none;
+    border-radius: 5px;
+    padding: .8rem;
+    color: whitesmoke;
+}
+
+.acc-button i {
+    margin-right: .5rem;
 }

@@ -10,21 +10,31 @@
     <body>
         <header>
             <div class="fixed-topbar">
-                <h1><i class="logo fab fa-wolf-pack-battalion"></i>SamEx</h1>
+                <h1><i class="logo fab fa-wolf-pack-battalion"></i>SamExc</h1>
 
-                <div class="infobar">
-                    <p id="current-balance">Balance: S$10000</p>
-                        <button onclick="dropdown()" class="dropdown-btn"><i class="dropdown-icon fas fa-bars fa-2x"></i>
-                    </button>
-                </div>
+                <button onclick="dropdown()" class="dropdown-btn"><i class="dropdown-icon fas fa-bars fa-2x"></i></button>
             </div>
 
             <div id="drop-content" class="drop-content">
-                <a href="#bank">Deposit / Withdraw</a>
+                <a href="#account">Account</a>
                 <a href="#trade">Trade</a>
                 <a href="#statistics">Statistics</a>
             </div>
         </header>
+
+        <main>
+            <section id="account" class="box">
+                <p class="balance">Cash balance: $</p>
+
+                <div class="balance-wheel"></div>
+
+                <div class="action-buttons">
+                    <button class="acc-button deposit"><i class="fas fa-donate"></i>Deposit</button>
+                    <button class="acc-button withdraw"><i class="fas fa-cash-register"></i>Withdrawal</button>
+                </div>
+            </section>
+        </main>
+
         <script src="scripts/script.js"></script>
     </body>
 </html>
