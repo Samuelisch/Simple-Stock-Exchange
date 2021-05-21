@@ -3,35 +3,58 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Simple Stock Exchange</title>
+        <title>Simple Budget</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     </head>
     <body>
         <header>
             <div class="fixed-topbar">
-                <h1><i class="logo fab fa-wolf-pack-battalion"></i>SamExc</h1>
+                <h1><i class="logo fab fa-wolf-pack-battalion"></i>SamBud</h1>
 
                 <button onclick="dropdown()" class="dropdown-btn"><i class="dropdown-icon fas fa-bars fa-2x"></i></button>
             </div>
 
             <div id="drop-content" class="drop-content">
-                <a href="#account">Account</a>
-                <a href="#trade">Trade</a>
-                <a href="#statistics">Statistics</a>
+                <a href="#account">Account & history</a>
+                <a href="#transactions">Transactions</a>
+                <a href="#color-code">Detailed Payees</a>
             </div>
         </header>
 
         <main>
-            <section id="account" class="box">
-                <p class="balance">Cash balance: $</p>
+            <section id="account" class="box account">
+                <p class="balance">Cash available: $0.00</p>
 
-                <div class="balance-wheel"></div>
+                <div class="transactions-container">
+                    <div class="history-grid">
+                        <span class="cell action-type">Top-up</span>
+                        <span class="cell action-amount">$10000</span>
+                        <span class="cell action-date">"Date and time"</span>
+                        <span class="cell action-type">Received</span>
+                        <span class="cell action-amount">$200000</span>
+                        <span class="cell action-date">"Date and time"</span>
+                        <span class="cell action-type">Expenditure</span>
+                        <span class="cell action-amount">$8000</span>
+                        <span class="cell action-date">19:18 20/12/21</span>
+                        <span class="cell action-type">Withdrawal</span>
+                        <span class="cell action-amount">$8000</span>
+                        <span class="cell action-date">19:18 20/12/21</span>
+                    </div>
+                </div>
 
                 <div class="action-buttons">
-                    <button class="acc-button deposit"><i class="fas fa-donate"></i>Deposit</button>
-                    <button class="acc-button withdraw"><i class="fas fa-cash-register"></i>Withdrawal</button>
+                    <button class="act-button top-up"><i class="fas fa-donate"></i>Top-up</button>
+                    <button class="act-button withdraw"><i class="fas fa-cash-register"></i>Withdraw</button>
                 </div>
+            </section>
+
+            <section id="transactions" class="box transactions">
+                <button onclick="transact()" class="act-button add"><i class="far fa-plus-square fa-lg"></i>New transaction</button>
+
+                <form class="dropdown-transact"></form>
+
+                <div id="color-code" class="payees"></div>
             </section>
         </main>
 
