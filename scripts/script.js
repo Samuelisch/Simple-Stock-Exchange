@@ -1,6 +1,6 @@
 /* dropdown menu function */
 function dropdown() {
-  document.getElementById("drop-content").classList.toggle("show-dropdown");
+  document.getElementById("drop-content").classList.add("show-dropdown");
 }
 
 /* event for click outside of dropdown icon */

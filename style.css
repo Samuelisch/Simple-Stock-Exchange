@@ -142,3 +142,34 @@ h1 {
 .add i {
     margin-right: 1rem;
 }
+
+.dropdown-transact {
+    background-color: grey;
+    width: 80%;
+    padding: 10px;
+}
+
+.plus-minus {
+    background-color: rgb(156, 30, 30);
+    width: 13%;
+    padding: 2px 2px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.plus-minus-btn {
+    background-color: rgba(241, 239, 239, 1);
+    color: rgb(2, 8, 22);
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.plus-minus:hover {
+    background-color:rgb(32, 146, 32);
+}
+
+.plus-minus:hover .plus-minus-btn {
+    transform: translateX(100%);
+}

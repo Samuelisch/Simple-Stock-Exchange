@@ -31,15 +31,6 @@
                         <span class="cell action-type">Top-up</span>
                         <span class="cell action-amount">$10000</span>
                         <span class="cell action-date">"Date and time"</span>
-                        <span class="cell action-type">Received</span>
-                        <span class="cell action-amount">$200000</span>
-                        <span class="cell action-date">"Date and time"</span>
-                        <span class="cell action-type">Expenditure</span>
-                        <span class="cell action-amount">$8000</span>
-                        <span class="cell action-date">19:18 20/12/21</span>
-                        <span class="cell action-type">Withdrawal</span>
-                        <span class="cell action-amount">$8000</span>
-                        <span class="cell action-date">19:18 20/12/21</span>
                     </div>
                 </div>
 
@@ -52,7 +43,11 @@
             <section id="transactions" class="box transactions">
                 <button onclick="transact()" class="act-button add"><i class="far fa-plus-square fa-lg"></i>New transaction</button>
 
-                <form class="dropdown-transact"></form>
+                <form class="dropdown-transact">
+                    <div class="plus-minus">
+                        <div class="plus-minus-btn">-</div>
+                    </div>
+                </form>
 
                 <div id="color-code" class="payees"></div>
             </section>
