@@ -1,14 +1,35 @@
 /* dropdown menu function */
-function dropdown() {
-  document.getElementById("drop-content").classList.add("show-dropdown");
-}
+const menuBtn = document.querySelector('.dropdown-btn');
+const dropMenu = document.querySelector('.drop-content');
+const plusBtn = document.querySelector('.plus-minus-btn');
+const plusBtnContainer = document.querySelector('.plus-minus');
+const amount = document.querySelector('.transact-amount');
 
-/* event for click outside of dropdown icon */
-window.onclick = function(event) {
-  if (!event.target.matches('.dropdown-icon')) {
-    let dropdowns = document.getElementById("drop-content");
-    if (dropdowns.classList.contains('show-dropdown')) {
-      dropdowns.classList.remove('show-dropdown');
+function outside(e) {
+  if (!e.target.matches('.dropdown-btn') && (!e.target.matches('.dropdown-icon'))) {
+    if (dropMenu.classList.contains('show-dropdown')) {
+      dropMenu.classList.remove('show-dropdown');
     }
+  } else {
+    dropMenu.classList.toggle('show-dropdown');
+  }
+  if (e.target.matches('.plus-minus-btn') || (e.target.matches('.plus-minus'))) {
+    plusMinus();
   }
 }
+
+function plusMinus() {
+  if (plusBtn.style.transform) {
+    plusBtn.style.transform = null;
+    plusBtn.textContent = "-";
+    plusBtnContainer.style.backgroundColor = "rgb(156, 30, 30)";
+    amount.style.color= "rgb(156, 30, 30)"
+  } else {
+    plusBtn.style.transform = "translateX(100%)"
+    plusBtn.textContent = "+";
+    plusBtnContainer.style.backgroundColor = "rgb(32, 146, 32)";
+    amount.style.color= "rgb(32, 146, 32)";
+  }
+}
+
+window.addEventListener('click', outside);

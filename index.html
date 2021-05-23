@@ -12,10 +12,10 @@
             <div class="fixed-topbar">
                 <h1><i class="logo fab fa-wolf-pack-battalion"></i>SamBud</h1>
 
-                <button onclick="dropdown()" class="dropdown-btn"><i class="dropdown-icon fas fa-bars fa-2x"></i></button>
+                <button class="dropdown-btn"><i class="dropdown-icon fas fa-bars fa-2x"></i></button>
             </div>
 
-            <div id="drop-content" class="drop-content">
+            <div class="drop-content">
                 <a href="#account">Account & history</a>
                 <a href="#transactions">Transactions</a>
                 <a href="#color-code">Detailed Payees</a>
@@ -30,7 +30,7 @@
                     <div class="history-grid">
                         <span class="cell action-type">Top-up</span>
                         <span class="cell action-amount">$10000</span>
-                        <span class="cell action-date">"Date and time"</span>
+                        <span class="cell action-date">"Date"</span>
                     </div>
                 </div>
 
@@ -44,8 +44,14 @@
                 <button onclick="transact()" class="act-button add"><i class="far fa-plus-square fa-lg"></i>New transaction</button>
 
                 <form class="dropdown-transact">
-                    <div class="plus-minus">
-                        <div class="plus-minus-btn">-</div>
+                    <div class="transact-container">
+                        <div class="plus-minus">
+                            <div class="plus-minus-btn">-</div>
+                        </div>
+                        <input type="number" id="amount" class="transact-amount" maxlength="13" required />
+
+                        <!-- selection input for withdrawal / expenses if red, topup / income if green -->
+                        <!-- date selection after, default to current date -->
                     </div>
                 </form>
 

@@ -32,6 +32,8 @@ h1 {
     background-color: inherit;
     border: none;
     width: 50px;
+    border: 1px solid rgba(0, 99, 99, 0.212);
+    border-radius: 5px;
 }
 
 .drop-content {
@@ -149,7 +151,15 @@ h1 {
     padding: 10px;
 }
 
+.transact-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
 .plus-minus {
+    display: inline-block;
     background-color: rgb(156, 30, 30);
     width: 13%;
     padding: 2px 2px;
@@ -161,15 +171,27 @@ h1 {
     background-color: rgba(241, 239, 239, 1);
     color: rgb(2, 8, 22);
     border-radius: 5px;
-    width: 50%;
+    width: 3rem;
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 0.1s linear;
+    transform: null;
 }
 
-.plus-minus:hover {
+.plus-minus-toggle {
     background-color:rgb(32, 146, 32);
 }
 
-.plus-minus:hover .plus-minus-btn {
-    transform: translateX(100%);
+.transact-amount {
+    display: inline-block;
+    font-size: 2.1rem;
+    width: 80%;
+    text-align: right;
+    background-color: darkgray;
+    border: none;
+    color: rgb(156, 30, 30);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
