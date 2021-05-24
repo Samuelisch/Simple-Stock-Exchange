@@ -1,9 +1,15 @@
+:root {
+    --green: rgb(32, 146, 32);
+    --red: rgb(156, 30, 30);
+    --text-white: rgba(241, 239, 239, 0.911);
+}
+
 html {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     font-size: 8px; /* easy styling */
     background: rgb(2, 8, 22);
-    color: rgba(241, 239, 239, 0.911)
+    color: var(--text-white);
 }
 
 body {
@@ -51,7 +57,7 @@ h1 {
     padding: 15px 20px;
     text-decoration: none;
     display: block;
-    color: rgba(241, 239, 239, 0.911);
+    color: var(--text-white);
 }
 
 .drop-content a:hover {
@@ -60,10 +66,6 @@ h1 {
 
 .drop-content a:active {
     background-color: royalblue;
-}
-
-.show-dropdown{
-    display: block;
 }
 
 .box {
@@ -99,6 +101,7 @@ h1 {
     row-gap: 1px;
     background-color: rgb(156, 30, 30);
     text-align: center;
+    user-select: none;
 }
 
 .cell {
@@ -109,90 +112,147 @@ h1 {
     text-align: left;
 }
 
-.green {
-    color: rgb(32, 146, 32);
-}
-
-.red {
-    color: rgb(156, 30, 30);
-}
-
-/* deposit and withdraw buttons */
-.act-button {
-    margin: 0 1rem;
-    background-color: rgb(2, 8, 22);
-    border: none;
-    border-radius: 5px;
-    padding: .8rem;
-    color: whitesmoke;
-}
-
-.act-button i {
-    margin-right: .5rem;
-}
-
 .transactions {
     margin-top: 50px;
 }
 
-.add {
+.act-button {
     margin: 20px;
+    background-color: rgb(2, 8, 22);
+    border: none;
+    border-radius: 5px;
     padding: 1rem 2rem;
+    color: var(--text-white);
     font-size: 2rem;
 }
 
-.add i {
+.act-button i {
     margin-right: 1rem;
 }
 
 .dropdown-transact {
-    background-color: grey;
+    display: none;
+    background-color: rgb(6, 116, 116);
     width: 80%;
-    padding: 10px;
+    padding: 3rem;
+    margin-bottom: 10%;
 }
 
 .transact-container {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(auto, 1fr);
+    column-gap: 1rem;
+    row-gap: 5rem;
     justify-content: space-around;
 }
 
 .plus-minus {
     display: inline-block;
-    background-color: rgb(156, 30, 30);
-    width: 13%;
+    background-color: var(--red);
+    width: 50%;
     padding: 2px 2px;
     border-radius: 5px;
     transition: background-color 0.2s;
+    justify-self: center;
 }
 
 .plus-minus-btn {
     background-color: rgba(241, 239, 239, 1);
     color: rgb(2, 8, 22);
     border-radius: 5px;
-    width: 3rem;
+    width: 50%;
     text-align: center;
+    user-select: none;
     transition: transform 0.1s linear;
     transform: null;
 }
 
-.plus-minus-toggle {
-    background-color:rgb(32, 146, 32);
+.transact-amount {
+    color: var(--red);
 }
 
-.transact-amount {
-    display: inline-block;
+.transact-amount,
+.transact-payee {
     font-size: 2.1rem;
-    width: 80%;
     text-align: right;
-    background-color: darkgray;
+    background-color: var(--text-white);
     border: none;
-    color: rgb(156, 30, 30);
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.transaction-type {
+    background-color: var(--text-white);
+    border: none;
+    text-align-last: center;
+}
+
+.date {
+    text-align: center;
+    font-family: inherit;
+    background-color: var(--text-white);
+    border: none;
+}
+
+.color-code {
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-icon-container {
+    background-color: var(--text-white);
+    padding: 6px;
+}
+
+.color-icon {
+    width: 15px;
+    background-color: rgb(15, 15, 15);
+    height: 15px;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.color-select {
+    background-color: var(--text-white);
+    border: none;
+    text-align-last: center;
+    padding: 5px;
+}
+
+.cancel-submit {
+    width: 70%;
+    justify-self: center;
+    background-color: var(--text-white);
+    border: none;
+}
+
+.cancel-submit:hover {
+    background-color: var(--red);
+    color: var(--text-white);
+}
+
+.submit-form {
+    width: 70%;
+    justify-self: center;
+    padding: 5px;
+    border: none;
+}
+
+.submit-form:hover {
+    background-color: var(--green);
+}
+
+.show-dropdown{
+    display: block;
+}
+
+.extra-margin {
+    margin: 5rem 0;
 }

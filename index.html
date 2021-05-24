@@ -12,7 +12,7 @@
             <div class="fixed-topbar">
                 <h1><i class="logo fab fa-wolf-pack-battalion"></i>SamBud</h1>
 
-                <button class="dropdown-btn"><i class="dropdown-icon fas fa-bars fa-2x"></i></button>
+                <button class="dropdown-btn dropdown"><i class="dropdown fas fa-bars fa-2x"></i></button>
             </div>
 
             <div class="drop-content">
@@ -33,29 +33,54 @@
                         <span class="cell action-date">"Date"</span>
                     </div>
                 </div>
-
-                <div class="action-buttons">
-                    <button class="act-button top-up"><i class="fas fa-donate"></i>Top-up</button>
-                    <button class="act-button withdraw"><i class="fas fa-cash-register"></i>Withdraw</button>
-                </div>
             </section>
 
             <section id="transactions" class="box transactions">
-                <button onclick="transact()" class="act-button add"><i class="far fa-plus-square fa-lg"></i>New transaction</button>
+                <button class="act-button transact"><i class="transact far fa-plus-square fa-lg"></i>New transaction</button>
 
                 <form class="dropdown-transact">
                     <div class="transact-container">
-                        <div class="plus-minus">
-                            <div class="plus-minus-btn">-</div>
-                        </div>
-                        <input type="number" id="amount" class="transact-amount" maxlength="13" required />
 
-                        <!-- selection input for withdrawal / expenses if red, topup / income if green -->
-                        <!-- date selection after, default to current date -->
+                        <div class="plus-minus slider">
+                            <div class="plus-minus-btn slider">-</div>
+                        
+                        </div>
+                        <input type="number" id="amount" class="transact-amount" maxlength="13" placeholder="0.00" required />
+
+                        <select name="transaction-type" id="transaction-type" class="transaction-type" required>
+                            <option value="" disabled selected hidden>Select type..</option>
+                            <option value="topUp">Top-up</option>
+                            <option value="withdrawal">Withdrawal</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                        <input type="date" id="date" class="date" />
+
+                        <div class="color-code">
+                            <div class="color-icon-container">
+                                <div class="color-icon"></div> <!-- icon for color scheme-->
+                            </div>
+
+                            <select name="color-select" id="color-select" class="color-select">
+                                <option value="" disabled selected hidden>Color</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="red">Red</option>
+                                <option value="orange">Orange</option>
+                                <option value="purple">Purple</option>
+                                <option value="cyan">Cyan</option>
+                                <option value="black">Others</option>
+                            </select>
+                        </div>
+
+                        <input type="text" id="transact-payee" class="transact-payee" placeholder="Payee" required />
+                        
+                        <input type="submit" id="cancel-submit" class="cancel-submit" value="Cancel" />
+
+                        <input type="submit" id="submit-form" class="submit-form" value="Confirm transaction" />
                     </div>
                 </form>
-
-                <div id="color-code" class="payees"></div>
             </section>
         </main>
 
