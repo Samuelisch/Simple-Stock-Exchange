@@ -133,7 +133,7 @@ function colorChange() {
   }
 }
 
-function limitDecimal() {
+function decimalLimit() {
   if (this.value) {
     this.value = Number(this.value).toFixed(2);
   }
@@ -142,4 +142,4 @@ function limitDecimal() {
 window.addEventListener('click', outside);
 transactDate.value = getDateToday();
 transactColor.addEventListener('change', colorChange);
-transactAmount.addEventListener('change', limitDecimal);
+transactAmount.addEventListener('change', decimalLimit);
