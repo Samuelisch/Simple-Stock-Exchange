@@ -1,3 +1,7 @@
+//Cash Balance
+const balanceAmount = document.querySelector('.amount');
+let cash = 0;
+balanceAmount.innerHTML = cash;
 /* dropdown menu function */
 const menuBtn = document.querySelector('.dropdown.btn');
 const dropMenu = document.querySelector('.drop-content');
@@ -9,11 +13,15 @@ const plusBtnContainer = document.querySelector('.plus-minus');
 const plusBtn = document.querySelector('.plus-minus-btn');
 const transactAmount = document.querySelector('.transact-amount');
 const transactType = document.querySelector('.transaction-type');
+const add = document.querySelectorAll('.add');
+const minus = document.querySelectorAll('.minus');
 const transactDate = document.querySelector('.date');
 const transactIcon = document.querySelector('.color-icon');
 const transactColor = document.querySelector('.color-select');
 const transactPayee = document.querySelector('.transact-payee');
 const formSubmit = document.querySelector('.submit-form');
+
+minus.forEach(minus => minus.hidden = false);
 
 function outside(e) {
   if (!e.target.matches('.dropdown')) {
@@ -42,14 +50,29 @@ function outside(e) {
   if (e.target.matches('.submit-form')) {
     e.preventDefault();
     addHistoryCell();
-    //addTransactColorSort();
+    updateColorSort();
+    resetForm();
   }
 }
 
+function updateColorSort() {
+
+}
+
 function addHistoryCell() {
+  if (plusBtnContainer.style.backgroundColor == "var(--green)") {
+    cash += Number(transactAmount.value);
+  } else {
+    cash -= Number(transactAmount.value);
+  }
+  balanceAmount.innerHTML = cash;
   addTypeCell();
   addAmountCell();
   addDateCell();
+}
+
+function updateColorSort() {
+
 }
 
 function addTypeCell() {
@@ -86,15 +109,17 @@ function addDateCell() {
 }
 
 function resetForm() {
+  revertPlusBtn();
   transactDate.value = getDateToday();
   transactAmount.value = '';
   transactType.value = '';
   transactIcon.style.backgroundColor = 'black';
-  transactColor.value = '';
+  transactColor.value = 'black';
   transactPayee.value = '';
   document.querySelector('.transact').disabled = false;
+  add.forEach(add => add.hidden = true);
+  minus.forEach(minus => minus.hidden = false);
   transactForm.classList.remove('show-dropdown');
-  revertPlusBtn();
 }
 
 function revertPlusBtn() {
@@ -102,7 +127,9 @@ function revertPlusBtn() {
   plusBtn.style.transform = null;
   plusBtn.textContent = "-";
   plusBtnContainer.style.backgroundColor = "var(--red)";
-  transactAmount.style.color= "var(--red)"
+  transactAmount.style.color= "var(--red)";
+  add.forEach(add => add.hidden = true);
+  minus.forEach(minus => minus.hidden = false);
 }
 
 function plusMinus() {
@@ -114,6 +141,8 @@ function plusMinus() {
     plusBtn.textContent = "+";
     plusBtnContainer.style.backgroundColor = "var(--green)";
     transactAmount.style.color= "var(--green)";
+    add.forEach(add => add.hidden = false);
+    minus.forEach(minus => minus.hidden = true);
   }
 }
 
