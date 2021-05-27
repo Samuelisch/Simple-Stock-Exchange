@@ -1,7 +1,7 @@
 //Cash Balance
 const balanceAmount = document.querySelector('.amount');
 let cash = 0;
-balanceAmount.innerHTML = cash;
+balanceAmount.textContent = cash;
 /* dropdown menu function */
 const menuBtn = document.querySelector('.dropdown.btn');
 const dropMenu = document.querySelector('.drop-content');
@@ -65,7 +65,7 @@ function addHistoryCell() {
   } else {
     cash -= Number(transactAmount.value);
   }
-  balanceAmount.innerHTML = cash;
+  balanceAmount.textContent = cash;
   addTypeCell();
   addAmountCell();
   addDateCell();
