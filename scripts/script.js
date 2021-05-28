@@ -24,35 +24,35 @@ const formSubmit = document.querySelector('.submit-form');
 minus.forEach(minus => minus.hidden = false);
 
 function outside(e) {
-  if (!e.target.matches('.dropdown')) {
-    if (dropMenu.classList.contains('show-dropdown')) {
-      dropMenu.classList.remove('show-dropdown');
-    }
-  } else {
-    dropMenu.classList.toggle('show-dropdown');
+if (!e.target.matches('.dropdown')) {
+  if (dropMenu.classList.contains('show-dropdown')) {
+    dropMenu.classList.remove('show-dropdown');
   }
-  /* slider */
-  if (e.target.matches('.slider')) {
-    plusMinus();
-  }
-  /* transact button */
-  if (e.target.matches('.transact')) {
-    document.querySelector('.transact').disabled = true;
-    transactForm.classList.add('show-dropdown');
-  }
+} else {
+  dropMenu.classList.toggle('show-dropdown');
+}
+/* slider */
+if (e.target.matches('.slider')) {
+  plusMinus();
+}
+/* transact button */
+if (e.target.matches('.transact')) {
+  document.querySelector('.transact').disabled = true;
+  transactForm.classList.add('show-dropdown');
+}
 
-  //Cancel/reset form
-  if (e.target.matches('.cancel-submit')) {
-    resetForm();
-  }
+//Cancel/reset form
+if (e.target.matches('.cancel-submit')) {
+  resetForm();
+}
 
-  // Submit form
-  if (e.target.matches('.submit-form')) {
-    e.preventDefault();
-    addHistoryCell();
-    updateColorSort();
-    resetForm();
-  }
+// Submit form
+if (e.target.matches('.submit-form')) {
+  e.preventDefault();
+  addHistoryCell();
+  updateColorSort();
+  resetForm();
+}
 }
 
 function updateColorSort() {
@@ -60,15 +60,15 @@ function updateColorSort() {
 }
 
 function addHistoryCell() {
-  if (plusBtnContainer.style.backgroundColor == "var(--green)") {
-    cash += Number(transactAmount.value);
-  } else {
-    cash -= Number(transactAmount.value);
-  }
-  balanceAmount.textContent = cash;
-  addTypeCell();
-  addAmountCell();
-  addDateCell();
+if (plusBtnContainer.style.backgroundColor == "var(--green)") {
+  cash += Number(transactAmount.value);
+} else {
+  cash -= Number(transactAmount.value);
+}
+balanceAmount.textContent = cash;
+addTypeCell();
+addAmountCell();
+addDateCell();
 }
 
 function updateColorSort() {
@@ -76,96 +76,96 @@ function updateColorSort() {
 }
 
 function addTypeCell() {
-  let icon = document.createElement('div');
-  icon.className = 'history-icon';
-  icon.style.backgroundColor = transactColor.value;
-  let type = document.createElement('span');
-  type.append(`${transactType.value}`);
-  type.className = 'action-type';
-  let cell = document.createElement('div');
-  cell.className = 'cell';
-  cell.appendChild(icon);
-  cell.appendChild(type);
-  histGrid.appendChild(cell);
+let icon = document.createElement('div');
+icon.className = 'history-icon';
+icon.style.backgroundColor = transactColor.value;
+let type = document.createElement('span');
+type.append(`${transactType.value}`);
+type.className = 'action-type';
+let cell = document.createElement('div');
+cell.className = 'cell';
+cell.appendChild(icon);
+cell.appendChild(type);
+histGrid.appendChild(cell);
 }
 
 function addAmountCell() {
-  let cell = document.createElement('span');
-  cell.className = 'cell action-amount';
-  cell.append(`$${transactAmount.value}`);
-  if (!plusBtnContainer.style.backgroundColor) {
-    cell.style.color = 'var(--red)'
-  } else {
-    cell.style.color = plusBtnContainer.style.backgroundColor;
-  }
-  histGrid.appendChild(cell);
+let cell = document.createElement('span');
+cell.className = 'cell action-amount';
+cell.append(`$${transactAmount.value}`);
+if (!plusBtnContainer.style.backgroundColor) {
+  cell.style.color = 'var(--red)'
+} else {
+  cell.style.color = plusBtnContainer.style.backgroundColor;
+}
+histGrid.appendChild(cell);
 }
 
 function addDateCell() {
-  let cell = document.createElement('span');
-  cell.className = 'cell action-date';
-  cell.append(transactDate.value);
-  histGrid.appendChild(cell);
+let cell = document.createElement('span');
+cell.className = 'cell action-date';
+cell.append(transactDate.value);
+histGrid.appendChild(cell);
 }
 
 function resetForm() {
-  revertPlusBtn();
-  transactDate.value = getDateToday();
-  transactAmount.value = '';
-  transactType.value = '';
-  transactIcon.style.backgroundColor = 'black';
-  transactColor.value = 'black';
-  transactPayee.value = '';
-  document.querySelector('.transact').disabled = false;
-  add.forEach(add => add.hidden = true);
-  minus.forEach(minus => minus.hidden = false);
-  transactForm.classList.remove('show-dropdown');
+revertPlusBtn();
+transactDate.value = getDateToday();
+transactAmount.value = '';
+transactType.value = '';
+transactIcon.style.backgroundColor = 'black';
+transactColor.value = 'black';
+transactPayee.value = '';
+document.querySelector('.transact').disabled = false;
+add.forEach(add => add.hidden = true);
+minus.forEach(minus => minus.hidden = false);
+transactForm.classList.remove('show-dropdown');
 }
 
 function revertPlusBtn() {
-  plusBtn.value = 'minus';
-  plusBtn.style.transform = null;
-  plusBtn.textContent = "-";
-  plusBtnContainer.style.backgroundColor = "var(--red)";
-  transactAmount.style.color= "var(--red)";
-  add.forEach(add => add.hidden = true);
-  minus.forEach(minus => minus.hidden = false);
+plusBtn.value = 'minus';
+plusBtn.style.transform = null;
+plusBtn.textContent = "-";
+plusBtnContainer.style.backgroundColor = "var(--red)";
+transactAmount.style.color= "var(--red)";
+add.forEach(add => add.hidden = true);
+minus.forEach(minus => minus.hidden = false);
 }
 
 function plusMinus() {
-  if (plusBtn.style.transform) {
-    revertPlusBtn();
-  } else {
-    plusBtn.value = 'plus';
-    plusBtn.style.transform = "translateX(100%)"
-    plusBtn.textContent = "+";
-    plusBtnContainer.style.backgroundColor = "var(--green)";
-    transactAmount.style.color= "var(--green)";
-    add.forEach(add => add.hidden = false);
-    minus.forEach(minus => minus.hidden = true);
-  }
+if (plusBtn.style.transform) {
+  revertPlusBtn();
+} else {
+  plusBtn.value = 'plus';
+  plusBtn.style.transform = "translateX(100%)"
+  plusBtn.textContent = "+";
+  plusBtnContainer.style.backgroundColor = "var(--green)";
+  transactAmount.style.color= "var(--green)";
+  add.forEach(add => add.hidden = false);
+  minus.forEach(minus => minus.hidden = true);
+}
 }
 
 function getDateToday() {
-  function zerofill(i) {
-    return (i < 10 ? '0' : '') + i;
-  }
-  let today = new Date;
-  return `${today.getFullYear()}-${zerofill(today.getMonth() + 1)}-${zerofill(today.getDate())}`;
+function zerofill(i) {
+  return (i < 10 ? '0' : '') + i;
+}
+let today = new Date;
+return `${today.getFullYear()}-${zerofill(today.getMonth() + 1)}-${zerofill(today.getDate())}`;
 }
 
 function colorChange() {
-  if (this.value) {
-    transactIcon.style.backgroundColor = this.value;
-  } else {
-    transactIcon.style.backgroundColor = 'rgb(15, 15, 15)';
-  }
+if (this.value) {
+  transactIcon.style.backgroundColor = this.value;
+} else {
+  transactIcon.style.backgroundColor = 'rgb(15, 15, 15)';
+}
 }
 
 function decimalLimit() {
-  if (this.value) {
-    this.value = Number(this.value).toFixed(2);
-  }
+if (this.value) {
+  this.value = Number(this.value).toFixed(2);
+}
 }
 
 window.addEventListener('click', outside);

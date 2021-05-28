@@ -23,59 +23,61 @@
         </header>
 
         <main>
-            <section id="account" class="box">
-                <p class="balance">Cash available: $<span class="amount"></span></p>
+            <div class="main-container">
+                <section id="account" class="box">
+                    <p class="balance">Cash available: $<span class="amount"></span></p>
 
-                <div class="transactions-container">
-                    <div class="history-grid"></div>
-                </div>
-            </section>
+                    <div class="transactions-container">
+                        <div class="history-grid"></div>
+                    </div>
+                </section>
 
-            <section id="transactions" class="box transactions">
-                <button class="act-button transact"><i class="transact far fa-plus-square fa-lg"></i>New transaction</button>
+                <section id="transactions" class="box transactions">
+                    <button class="act-button transact"><i class="transact far fa-plus-square fa-lg"></i>New transaction</button>
 
-                <form class="dropdown-form">
-                    <div class="transact-container">
+                    <form class="dropdown-form">
+                        <div class="transact-container">
 
-                        <div class="plus-minus slider">
-                            <div class="plus-minus-btn slider">-</div>
-                        
-                        </div>
-                        <input type="number" class="transact-amount" maxlength="13" placeholder="0.00" required />
+                            <div class="plus-minus slider">
+                                <div class="plus-minus-btn slider">-</div>
+                            
+                            </div>
+                            <input type="number" class="transact-amount" maxlength="13" placeholder="0.00" required />
 
-                        <select name="transaction-type" class="transaction-type" required>
-                            <option value="" disabled selected hidden>Select type..</option>
-                            <option class="add" value="Deposit" hidden>Deposit</option>
-                            <option class="minus" value="Withdrawal" hidden>Withdrawal</option>
-                            <option class="add" value="Income" hidden>Income</option>
-                            <option class="minus" value="Expense" hidden>Expense</option>
-                        </select>
-                        <input type="date" class="date" />
+                            <select name="transaction-type" class="transaction-type" required>
+                                <option value="" disabled selected hidden>Select type..</option>
+                                <option class="add" value="Deposit" hidden>Deposit</option>
+                                <option class="minus" value="Withdrawal" hidden>Withdrawal</option>
+                                <option class="add" value="Income" hidden>Income</option>
+                                <option class="minus" value="Expense" hidden>Expense</option>
+                            </select>
+                            <input type="date" class="date" />
 
-                        <div class="color-code">
-                            <div class="color-icon-container">
-                                <div class="color-icon"></div> <!-- icon for color scheme-->
+                            <div class="color-code">
+                                <div class="color-icon-container">
+                                    <div class="color-icon"></div> <!-- icon for color scheme-->
+                                </div>
+
+                                <select name="color-select" class="color-select">
+                                    <option value="black" disabled selected hidden>Color</option>
+                                    <option value="green">Green</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="yellow">Yellow</option>
+                                    <option value="red">Red</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="purple">Purple</option>
+                                </select>
                             </div>
 
-                            <select name="color-select" class="color-select">
-                                <option value="black" disabled selected hidden>Color</option>
-                                <option value="green">Green</option>
-                                <option value="blue">Blue</option>
-                                <option value="yellow">Yellow</option>
-                                <option value="red">Red</option>
-                                <option value="orange">Orange</option>
-                                <option value="purple">Purple</option>
-                            </select>
+                            <input type="text" class="transact-payee" placeholder="Payee" required />
+                            
+                            <input type="button" class="cancel-submit" value="Cancel" />
+
+                            <input type="submit" class="submit-form" value="Confirm transaction" />
                         </div>
-
-                        <input type="text" class="transact-payee" placeholder="Payee" required />
-                        
-                        <input type="button" class="cancel-submit" value="Cancel" />
-
-                        <input type="submit" class="submit-form" value="Confirm transaction" />
-                    </div>
-                </form>
-            </section>
+                    </form>
+                </section>
+            </div>
         </main>
 
         <script src="scripts/script.js"></script>
