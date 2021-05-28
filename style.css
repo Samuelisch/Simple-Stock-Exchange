@@ -157,7 +157,7 @@ h1 {
 
 .transact-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(auto, 1fr);
     column-gap: 1rem;
     row-gap: 5rem;
@@ -272,4 +272,16 @@ input::-webkit-inner-spin-button {
 
 .extra-margin {
     margin: 5rem 0;
+}
+
+@media (min-width: 360px) {
+    .transact-container {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media (min-width: 600px) {
+    main {
+        max-width: 600px;
+    }
 }
