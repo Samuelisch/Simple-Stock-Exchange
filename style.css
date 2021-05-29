@@ -71,7 +71,7 @@ h1 {
 .box {
     display: flex;
     flex-direction: column;
-    margin: 2rem 1rem;
+    margin: 2rem 1rem 5rem;
     padding: 0 1rem .5rem;
     background-color: darkcyan;
     align-items: center;
@@ -127,10 +127,6 @@ h1 {
 .action-date {
     padding-right: 5rem;
     text-align: right;
-}
-
-.transactions {
-    margin-top: 50px;
 }
 
 .act-button {
@@ -272,6 +268,36 @@ input::-webkit-inner-spin-button {
 
 .extra-margin {
     margin: 5rem 0;
+}
+
+.color-history {
+    width: 80%;
+}
+
+.color-history p {
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.color-grid div {
+    font-size: 1.7rem;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.hist-color-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border: 2px solid rgba(241, 239, 239, 1);
 }
 
 @media (min-width: 360px) {
