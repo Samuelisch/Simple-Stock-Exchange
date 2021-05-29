@@ -196,10 +196,7 @@ function createColorIcon() {
   cell.appendChild(icon);
   cell.appendChild(colorNum);
   colorGrid.appendChild(cell);
-  console.log(colorCellArr.length);
 }
-
-console.log(colorCellArr.length);
 
 menuBtn.addEventListener('click', openDropDownMenu);
 window.addEventListener('click', outside);

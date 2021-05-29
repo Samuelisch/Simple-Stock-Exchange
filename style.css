@@ -306,7 +306,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
     main {
         display: flex;
         justify-content: center;
@@ -314,5 +314,38 @@ input::-webkit-inner-spin-button {
 
     .main-container {
         width: 650px;
+    }
+}
+
+@media (min-width: 800px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: flex-start;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box {
+        margin-bottom: 3rem;
+    }
+
+    .aside {
+        height: 74.4rem;
+        justify-content: flex-start;
+    }
+
+    .color-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .color-grid div {
+        margin: 4px 0;
+        display: flex;
+        justify-content: space-evenly;
     }
 }
