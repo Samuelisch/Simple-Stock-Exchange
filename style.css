@@ -272,6 +272,7 @@ input::-webkit-inner-spin-button {
 
 .color-history {
     width: 80%;
+    margin-bottom: 3rem;
 }
 
 .color-history p {
