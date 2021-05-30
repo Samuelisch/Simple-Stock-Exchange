@@ -71,7 +71,7 @@ h1 {
 .box {
     display: flex;
     flex-direction: column;
-    margin: 2rem 1rem 5rem;
+    margin: 2rem 1rem;
     padding: 0 1rem .5rem;
     background-color: darkcyan;
     align-items: center;
@@ -90,8 +90,15 @@ h1 {
     margin: 20px auto;
     width: 90%;
     height: 70px;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     border-radius: 5px;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+.transactions-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .history-grid {
@@ -127,6 +134,10 @@ h1 {
 .action-date {
     padding-right: 5rem;
     text-align: right;
+}
+
+.transactions {
+    margin-top: 50px;
 }
 
 .act-button {
@@ -270,44 +281,13 @@ input::-webkit-inner-spin-button {
     margin: 5rem 0;
 }
 
-.color-history {
-    width: 80%;
-    margin-bottom: 3rem;
-}
-
-.color-history p {
-    font-size: 2.4rem;
-    text-align: center;
-}
-
-.color-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-}
-
-.color-grid div {
-    font-size: 1.7rem;
-    justify-self: center;
-    display: flex;
-    align-items: center;
-}
-
-.hist-color-icon {
-    width: 15px;
-    height: 15px;
-    margin-right: 1rem;
-    border-radius: 50%;
-    border: 2px solid rgba(241, 239, 239, 1);
-}
-
 @media (min-width: 360px) {
     .transact-container {
         grid-template-columns: 1fr 2fr;
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 600px) {
     main {
         display: flex;
         justify-content: center;
@@ -315,38 +295,5 @@ input::-webkit-inner-spin-button {
 
     .main-container {
         width: 650px;
-    }
-}
-
-@media (min-width: 800px) {
-    .main-container {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        align-items: flex-start;
-    }
-
-    .flex-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .box {
-        margin-bottom: 3rem;
-    }
-
-    .aside {
-        height: 74.4rem;
-        justify-content: flex-start;
-    }
-
-    .color-grid {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .color-grid div {
-        margin: 4px 0;
-        display: flex;
-        justify-content: space-evenly;
     }
 }
